@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Programação</title>
+    <link rel="stylesheet" href="CSS/estilo.css">
+    
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="question">
+            <h2>O que é uma variável em programação?</h2>
+            <ul class="options">
+                <li><input type="radio" name="q1" value="a"> Um tipo de dado</li>
+                <li><input type="radio" name="q1" value="b"> Um valor constante</li>
+                <li><input type="radio" name="q1" value="c"> Um nome que armazena um valor que pode mudar</li>
+                <li><input type="radio" name="q1" value="d"> Uma função</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>O que é um loop (laço) em programação?</h2>
+            <ul class="options">
+                <li><input type="radio" name="q2" value="a"> Um comando condicional</li>
+                <li><input type="radio" name="q2" value="b"> Um bloco de código que se repete enquanto uma condição for verdadeira</li>
+                <li><input type="radio" name="q2" value="c"> Uma função</li>
+                <li><input type="radio" name="q2" value="d"> Um método de depuração</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>O que significa "debugging" em programação?</h2>
+            <ul class="options">
+                <li><input type="radio" name="q3" value="a"> Escrever código</li>
+                <li><input type="radio" name="q3" value="b"> Executar um programa</li>
+                <li><input type="radio" name="q3" value="c"> Encontrar e corrigir erros no código</li>
+                <li><input type="radio" name="q3" value="d"> Compilar um programa</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Qual das seguintes opções é uma instrução condicional?</h2>
+            <ul class="options">
+                <li><input type="radio" name="q4" value="a"> while</li>
+                <li><input type="radio" name="q4" value="b"> if</li>
+                <li><input type="radio" name="q4" value="c"> for</li>
+                <li><input type="radio" name="q4" value="d"> def</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Em qual das seguintes linguagens de programação usamos "console.log()" para exibir mensagens no console?</h2>
+            <ul class="options">
+                <li><input type="radio" name="q5" value="a"> Python</li>
+                <li><input type="radio" name="q5" value="b"> JavaScript</li>
+                <li><input type="radio" name="q5" value="c"> C++</li>
+                <li><input type="radio" name="q5" value="d"> Java</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>O que é uma função em programação?</h2>
+            <ul class="options">
+                <li><input type="radio" name="q6" value="a"> Um tipo de dado</li>
+                <li><input type="radio" name="q6" value="b"> Uma variável</li>
+                <li><input type="radio" name="q6" value="c"> Um bloco de código reutilizável que realiza uma tarefa específica</li>
+                <li><input type="radio" name="q6" value="d"> Uma estrutura de controle</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Qual a finalidade do comando "return" em uma função?</h2>
+            <ul class="options">
+                <li><input type="radio" name="q7" value="a"> Repetir o bloco de código da função</li>
+                <li><input type="radio" name="q7" value="b"> Encerrar a função e retornar um valor para onde a função foi chamada</li>
+                <li><input type="radio" name="q7" value="c"> Declarar uma variável</li>
+                <li><input type="radio" name="q7" value="d"> Executar a função</li>
+            </ul>
+        </div>
+        <button onclick="verificarRespostas()">Enviar Respostas</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function verificarRespostas() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            const q4 = document.querySelector('input[name="q4"]:checked');
+            const q5 = document.querySelector('input[name="q5"]:checked');
+            const q6 = document.querySelector('input[name="q6"]:checked');
+            const q7 = document.querySelector('input[name="q7"]:checked');
+            let pontos = 0;
+
+            if (q1 && q1.value === 'c') {
+                pontos++;
+            }
+            if (q2 && q2.value === 'b') {
+                pontos++;
+            }
+            if (q3 && q3.value === 'c') {
+                pontos++;
+            }
+            if (q4 && q4.value === 'b') {
+                pontos++;
+            }
+            if (q5 && q5.value === 'b') {
+                pontos++;
+            }
+            if (q6 && q6.value === 'c') {
+                pontos++;
+            }
+            if (q7 && q7.value === 'b') {
+                pontos++;
+            }
+
+            const result = document.getElementById('result');
+            result.textContent = `Você acertou ${pontos} de 7 perguntas.`;
+        }
+    </script>
+</body>
+</html>
